@@ -9,13 +9,13 @@ import  DishDetails from './DishDetails';
 class Menu extends Component{
     state = {
         dishes : DISHES,
-        selectedDish : null
+        selectedDish : null 
     }
 
 
     onDishSelect = dish =>{
 
-
+        console.log(dish);
         // console.log(dish);
         this.setState({selectedDish:dish})
     }
