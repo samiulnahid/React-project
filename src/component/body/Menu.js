@@ -5,6 +5,7 @@ import  DishDetails from './DishDetails';
 
 
 
+
 class Menu extends Component{
     state = {
         dishes : DISHES,
@@ -14,7 +15,8 @@ class Menu extends Component{
 
     onDishSelect = dish =>{
 
-        console.log(dish);
+
+        // console.log(dish);
         this.setState({selectedDish:dish})
     }
 
@@ -36,6 +38,8 @@ class Menu extends Component{
         if(this.state.selectedDish != null){
 
             DishDetail = <DishDetails dish ={this.state.selectedDish}/>
+
+           
         }
 
         return(
