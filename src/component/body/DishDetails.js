@@ -12,10 +12,17 @@ const DishDetails =(props) =>{
                     <CardTitle>{props.dish.name}</CardTitle>
                     
                        <CardText> {props.dish.description}</CardText>
-                      <CardText>  {props.dish.price} </CardText>
+                      <CardText>  {props.dish.price}/- </CardText>
                     
                     <hr/>
-                   <Comment comments={props.dish.comments}/>
+                    {/* ager system. jekhane dish ar vitore dish + comment sob asto . setar code */}
+                   {/* <Comment comments={props.dish.comments}/> */}
+
+                   {/* dish r comments aladavabe astise. sei jonne props.comments */}
+                   <Comment comments={props.comments}>
+
+                   </Comment>
+
                 </CardBody>
             </Card>
 
