@@ -8,6 +8,8 @@ import {Navigate, Route, Routes } from 'react-router-dom';
 const Body = () =>{
     return (
         <div>
+
+            
            <Routes>
                <Route path="/" element ={<Home/>}/>
                <Route path="/" element={<Navigate to="/home"/>}/> 
