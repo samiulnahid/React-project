@@ -1,1 +1,4 @@
 export const ADD_COMMENT = 'ADD_COMMENT'
+
+export const LOAD_DIEHES = 'LOAD_DISHES';
+export const DISHES_LOADING = 'DISHES_LOADING'
