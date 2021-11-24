@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
-import {Button , Form , FromGroup , Label , Input , Col, FormGroup} from 'reactstrap';
+import {Button , Form  , Label , Input , Col, FormGroup} from 'reactstrap';
 import {} from 'redux-form';
 
-class Contact extends Component{
+
+class Contact2 extends Component{
 
     constructor(props){
         super(props);
@@ -53,9 +54,9 @@ class Contact extends Component{
                         <Form onSubmit={this.handleSubmit}>
 
                             <FormGroup row>
-                                <Label htmlFor="firstname" md={2}>First Name</Label>
+                                <Label htmlFor="firstname" md={12}>First Name</Label>
 
-                                <Col md={10}>
+                                <Col md={12}>
 
                                     <Input 
                                         type="text" 
@@ -63,6 +64,7 @@ class Contact extends Component{
                                         placeholder="First Name" 
                                         value={this.state.firstname} 
                                         onChange={this.hendleInputchange}
+                                        required
 
                                     />
 
@@ -70,9 +72,9 @@ class Contact extends Component{
                             </FormGroup>
 
                              <FormGroup row>
-                                <Label htmlFor="lastname" md={2}>Last Name</Label>
+                                <Label htmlFor="lastname" md={12}>Last Name</Label>
 
-                                <Col md={10}>
+                                <Col md={12}>
 
                                     <Input 
                                         type="text" 
@@ -80,6 +82,7 @@ class Contact extends Component{
                                         placeholder="Last Name" 
                                         value={this.state.lastname}
                                         onChange={this.hendleInputchange}
+                                        required
                                         
                                     />
 
@@ -87,9 +90,9 @@ class Contact extends Component{
                             </FormGroup>
 
                             <FormGroup row>
-                                <Label htmlFor="telnum" md={2}>Contact tel.</Label>
+                                <Label htmlFor="telnum" md={12}>Contact tel.</Label>
 
-                                <Col md={10}>
+                                <Col md={12}>
 
                                     <Input 
                                         type="tel" 
@@ -97,6 +100,7 @@ class Contact extends Component{
                                         placeholder="Tel. Number" 
                                         value={this.state.telnum}
                                         onChange={this.hendleInputchange}
+                                        required
                                         
                                     />
 
@@ -104,9 +108,9 @@ class Contact extends Component{
                             </FormGroup>
 
                             <FormGroup row>
-                                <Label htmlFor="email" md={2}>Email</Label>
+                                <Label htmlFor="email" md={12}>Email</Label>
 
-                                <Col md={10}>
+                                <Col md={12}>
 
                                     <Input 
                                         type="email" 
@@ -122,7 +126,7 @@ class Contact extends Component{
 
                             <FormGroup row>
                                 
-                                <Col md={{size:6, offset:2}}>
+                                <Col md={{size:12}}>
                                     <FormGroup check>
                                         <Label check>
 
@@ -139,13 +143,14 @@ class Contact extends Component{
                                     </FormGroup>
                                 </Col>
 
-                                <Col md={{size:3, offset:1}}>
+                                <Col >
                                     
                                     <Input 
                                         type="select" 
                                         name="contactType"  
                                         value={this.state.contactType}
                                         onChange={this.hendleInputchange}
+                                        style={{display:"block", width:"100%" , background:"white", padding:"6px",border:"1px solid #e6dfdf", borderRadius:"5px"}}
                                         
                                     >
 
@@ -158,9 +163,9 @@ class Contact extends Component{
 
 
                             <FormGroup row>
-                                <Label htmlFor="message" md={2}>Your Feedback</Label>
+                                <Label htmlFor="message" md={12}>Your Feedback</Label>
 
-                                <Col md={10}>
+                                <Col md={12}>
 
                                     <Input 
                                         type="textarea" 
@@ -196,4 +201,4 @@ class Contact extends Component{
     }
 }
 
-export default Contact;
+export default Contact2;
