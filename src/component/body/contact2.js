@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
 import {Button , Form  , Label , Input , Col, FormGroup} from 'reactstrap';
 import {} from 'redux-form';
+// import axios from 'axios';
+// import {baseUrl} from '../../redux/baseURL'
+// import {Alert} from 'reactstrap'
+
 
 
 class Contact2 extends Component{
@@ -14,7 +18,11 @@ class Contact2 extends Component{
             email: "",
             agree: false,
             contactType : "Tel.",
-            message: ""
+            message: "",
+            // alertShow: false,
+            // alertText:null,
+            // alertType:null
+
         }
         this.hendleInputchange = this.hendleInputchange.bind(this);
         this.handleSubmit=this.handleSubmit.bind(this);
@@ -27,11 +35,25 @@ class Contact2 extends Component{
         this.setState({
             [name] : value
         })
+
+        
     }
 
     handleSubmit = event =>{
         console.log(this.state);
         event.preventDefault();
+        // axios.post(baseUrl +  "feedback", this.state  )
+        // .then(response => response.status)
+        // .then(status=>{
+        //     if(status === 201){
+             
+        //         this.setState({
+        //             alertShow:true,
+        //             alertText:"submited successfully",
+        //             alertType:"success"
+        //         })
+        //     }
+        // })
     }
 
 
@@ -46,12 +68,14 @@ class Contact2 extends Component{
 
                 <div className="row row-content" style={{paddingLeft:"20px" , textAlign:"left "}}>
 
+                    {/* <Alert isOpen={this.state.alertShow} color={this.statealertType}> {this.state.alertText} </Alert> */}
+
                     <div className="col-12">
                         <h3>send us your feedback</h3>
                     </div>
                     <div className="col-12 col-md-7">
 
-                        <Form onSubmit={this.handleSubmit}>
+                        <Form onSubmit={ this.handleSubmit}>
 
                             <FormGroup row>
                                 <Label htmlFor="firstname" md={12}>First Name</Label>

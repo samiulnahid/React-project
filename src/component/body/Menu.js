@@ -6,7 +6,7 @@ import  DishDetails from './DishDetails';
 import {CardColumns, Modal , ModalBody , ModalFooter , Button} from 'reactstrap';
 import {connect} from 'react-redux';
 // import * as actionTypes from '../../redux/actionTypes'
-import { addComment , fatchDishes  } from '../../redux/actionCreators';
+import { addComment , fatchDishes,fatchComments  } from '../../redux/actionCreators';
 import Loading from './Loading';
 
 
@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch =>{
     return {
         addComment : (dishId , rating ,author , comment) => dispatch(addComment(dishId , rating ,author , comment)),
 
-        fatchDishes : () => dispatch(fatchDishes())
+        fatchDishes : () => dispatch(fatchDishes()),
+        fatchComments : () => dispatch(fatchComments())
 
         // {
             // dispatch({
@@ -71,6 +72,7 @@ class Menu extends Component{
 
     componentDidMount(){
         this.props.fatchDishes();
+        this.props.fatchComments();
     }
 
 
@@ -116,7 +118,7 @@ class Menu extends Component{
                 if(this.state.selectedDish != null){
 
                     // const comments = this.state.Comments.filter(comment =>{
-                    const comments = this.props.comments.filter(comment =>{
+                    const comments = this.props.comments.comments.filter(comment =>{
                         return comment.dishId === this.state.selectedDish.id;
                     })
 
@@ -124,6 +126,7 @@ class Menu extends Component{
                                         dish ={this.state.selectedDish} 
                                         comments = {comments}
                                         addComment = {this.props.addComment}
+                                        CommentsIsLoading = {this.props.comments.isLoading}
                                         
                                     />
 

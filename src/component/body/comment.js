@@ -1,27 +1,59 @@
 import React from 'react';
 import dateFormat from 'dateformat' 
+import Loading from './Loading'
 
 const Comment =(props) =>{
 
-    console.log(props);
-    return(
+    if(props.commentIsLoading){
+       return <Loading/>;
+    }
+    else{
 
-        props.comments.map(comment => {
-            return(
-                <div key={comment.id}>
-                    <h5>
-                        {comment.author}
-                    </h5>
-                     <p>Rating : {comment.rating}</p>
-                    <p>{comment.comment}</p>
+            // console.log(props);
+        return(
+
+            props.comments.map(comment => {
+                return(
+                    <div key={comment.id}>
+
+                        <h5>{comment.author}</h5>
+
+                        <p>Rating : {comment.rating}</p>
+
+                        <p>{comment.comment}</p>
+                    
+                        <p>{dateFormat(comment.date, "dddd, mmmm dS, yyyy, h:MM TT")} </p>
+
+                    </div>
+                )
+            })
+
+
+        )
+
+    }
+
+    // console.log(props);
+    // return(
+
+    //     props.comments.map(comment => {
+    //         return(
+    //             <div key={comment.id}>
+
+    //                 <h5>{comment.author}</h5>
+
+    //                 <p>Rating : {comment.rating}</p>
+
+    //                 <p>{comment.comment}</p>
                    
-                    <p>{dateFormat(comment.date, "dddd, mmmm dS, yyyy, h:MM TT")}</p>
-                </div>
-            )
-        })
+    //                 <p>{dateFormat(comment.date, "dddd, mmmm dS, yyyy, h:MM TT")} </p>
+
+    //             </div>
+    //         )
+    //     })
 
 
-    )
+    // )
 }
 
 
